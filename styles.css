@@ -2,19 +2,37 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 header {
     background-color: #333;
     color: white;
     text-align: left;
     padding: 20px;
-
 }
 
 header > a {
     color: white;
     text-decoration: none;
 }
-
+a:hover{
+    color: pink;
+}
 /* style for search bar */
 
 .search-bar {
@@ -102,6 +120,11 @@ header > a {
     border: 1px solid #333;
     border-radius: 5px;
 }
+.card:hover{
+    background: linear-gradient(to right,#ced40c, #fafafa, #8f3864);
+    box-shadow: 0px 0px 0px 3px rgb(255, 255, 3);
+    
+}
 
 /* style the img poster */
 .poster{
@@ -161,3 +184,11 @@ header > a {
     text-align: center;
     padding: 10px;
  }
+ .fa-heart:hover{
+    cursor: pointer;
+ }
+ 
+ .fa-solid{
+    cursor: pointer;
+ }
+

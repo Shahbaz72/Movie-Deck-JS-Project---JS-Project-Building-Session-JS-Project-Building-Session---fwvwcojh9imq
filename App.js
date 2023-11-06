@@ -99,9 +99,9 @@ function sortByRating(){
     if(firstSortByRatingClick){
         sortedMovies = movies.sort((a,b)=> a.vote_average- b.vote_average);
         sortByRatingButton.textContent ="Sort by rating (most to least)";
-        firstSortByRatingClick = false;
+        firstSortByRatingClick =false ;
     }
-    else if(!firstSortByDateClick){
+    else if(!firstSortByRatingClick){
         sortedMovies = movies.sort((a,b)=> b.vote_average- a.vote_average);
         sortByRatingButton.textContent ="Sort by  rating (least to most)";
         firstSortByRatingClick = true;
@@ -110,6 +110,7 @@ function sortByRating(){
 }
 
 const showFavouriteMovies =(favMoviesName)=>{
+      
     const { poster_path,title,vote_count,vote_average}= favMoviesName;
     const listItem=document.createElement("li");
     listItem.className="card";
@@ -133,14 +134,22 @@ const showFavouriteMovies =(favMoviesName)=>{
 
                      })
      movieList.appendChild(listItem)
+
 }
 
 const searchMovies = async (searchMovie)=>{
     try {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchMovie}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`); 
-       const result = await response.json();
+        const result = await response.json();
+    
+
+       if(result.results.length===0)
+       {
+         alert('No Result Found')
+       }else{
+        searchRs.textContent=''
         movies=result.results;
-        renderMovies(movies);
+        renderMovies(movies);}
 
      } catch (error) {
          console.log(error);
@@ -158,7 +167,7 @@ searchButton.addEventListener("click",()=>{
 const getMovieByName =async (movieName)=>{
     try {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&api_key=f531333d637d0c44abc85b3e74db2186&include_adult=false&language=en-US&page=1`); 
-       const result = await response.json();
+        const result = await response.json();
         return result.results[0];
         
     } catch (error) {
