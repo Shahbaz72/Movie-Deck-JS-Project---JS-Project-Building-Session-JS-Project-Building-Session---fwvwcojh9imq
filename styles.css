@@ -139,6 +139,8 @@ a:hover{
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
+	style:none;
+	
 }
 
 /* style the favorite icon  */
@@ -192,7 +194,4 @@ a:hover{
     cursor: pointer;
  }
 
-a{
-	style:none;
-	color:white;
-}
+
