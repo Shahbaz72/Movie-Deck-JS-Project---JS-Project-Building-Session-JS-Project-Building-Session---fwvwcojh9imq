@@ -45,8 +45,12 @@ const renderMovies =(movies)=>{
        listItem.className="card";
        let imgSrc =poster_path? `https://image.tmdb.org/t/p/original/${poster_path}`
        :"https://w7.pngwing.com/pngs/116/765/png-transparent-clapperboard-computer-icons-film-movie-poster-angle-text-logo-thumbnail.png"
-       listItem.innerHTML+=`<img class="poster" src=${imgSrc} alt=${title}/>
+        const googleSearchLink = `https://www.google.com/search?q=${encodeURIComponent(title)}`;
+        listItem.innerHTML+=`
+       <a href="${googleSearchLink}" target="_blank">
+       <img class="poster" src=${imgSrc} alt=${title} />
                         <p class="title">${title}</p>
+                        <a/>
                         <section class="vote-favoriteIcon" >
                             <section class="vote">
                                 <p class="vote-count">${vote_count}</p>
