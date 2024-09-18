@@ -192,3 +192,7 @@ a:hover{
     cursor: pointer;
  }
 
+a{
+	style:none;
+	color:white;
+}
