@@ -47,7 +47,7 @@ const renderMovies =(movies)=>{
        :"https://w7.pngwing.com/pngs/116/765/png-transparent-clapperboard-computer-icons-film-movie-poster-angle-text-logo-thumbnail.png"
         const googleSearchLink = `https://www.google.com/search?q=${encodeURIComponent(title)}`;
         listItem.innerHTML+=`
-       <a href="${googleSearchLink}" target="_blank" class="myLink">
+       <a href="${googleSearchLink}" target="_blank" >
        <img class="poster" src=${imgSrc} alt=${title} />
                         <p class="title">${title}</p>
                         <a/>
